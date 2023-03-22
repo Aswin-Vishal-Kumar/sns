@@ -1,0 +1,20 @@
+Resources:
+  SnsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: My SNS Topic
+      Subscription:
+        - Protocol: email
+          Endpoint: aswinvishalkumar.vm@cat.com
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-bucket-abish
+      # NotificationConfiguration:
+      #   TopicConfigurations:
+      #     - Event: 's3:ObjectCreated:*'
+      #       Topic: !Ref SnsTopic
+      #     - Event: 's3:ObjectRemoved:*'
+      #       Topic: !Ref SnsTopic
+
